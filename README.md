@@ -120,6 +120,9 @@ Or run Cypress on interactive mode
 npm run test:open
 ```
 
+## Roadmap
+https://github.com/vue-a11y/vue-skip-to/issues/1
+
 ## Contributing
 - Check the open issues or open a new issue to start a discussion around your feature idea or the bug you found;
 - Fork repository, make changes and send a pull request;
