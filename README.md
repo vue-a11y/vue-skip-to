@@ -8,7 +8,7 @@ However, we are responsible for doing our utmost to make our applications usable
 "Skip to content" or "skip to a section" of your site is one of the most common accessibility techniques today, but not as used as it should be.
 
 In addition to being a technique recommended by WCAG 2.0, that's where this component was inspired.
-https://www.w3.org/TR/WCAG20-TECHS/G1.html
+https://www.w3.org/TR/WCAG20-TECHS/G1.html  
 https://www.w3.org/TR/WCAG20-TECHS/G124.html
 
 ## Install
@@ -34,12 +34,15 @@ Vue.use(VueSkipTo)
 In your `App.vue`
 ```vue
 <template>
-  <div id="app" tole="main">
+  <div id="app">
     <vue-skip-to to="#main" test="Skip to main content" />
 
     <logo :src="require('@/assets/logo.png')" />
     <h1 data-va="main header">{{ msg }}</h1>
     ...
+    <div id="main" role="main">
+      <!-- My content -->
+    </div>
   </div>
 </template>
 <script>
@@ -96,7 +99,7 @@ Prop            | Data Type  | required  | Description            | Default
 You can style the link through the selector `.vue-skip-to`
 
 ## Feature
-Inspired by this article, to know more, access the link:
+Inspired by this article, to know more, access the link:  
 http://www.nczonline.net/blog/2013/01/15/fixing-skip-to-content-links/
 
 - This component working in all modern browsers and IE9;
