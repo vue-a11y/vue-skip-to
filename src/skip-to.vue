@@ -19,6 +19,35 @@ export default {
       type: [Number, null],
       default: null
     }
+  },
+
+  mounted () {
+    this.init()
+  },
+
+  methods: {
+    init () {
+      window.addEventListener('hashchange', () => {
+        this.focusElement(location.hash.substring(1))
+      }, false)
+
+      if (location.hash && location.hash.substring(1)) {
+        console.log(location.hash.substring(1))
+        this.focusElement(location.hash.substring(1))
+      }
+    },
+
+    focusElement (id) {
+      if (!id) return
+      let element = window.document.getElementById(id)
+      if (element) {
+        if (!/^(a|select|input|button|textarea)/i.test(element.tagName.toLowerCase())) {
+          console.log('entrou')
+          element.setAttribute('tabindex', -1)
+        }
+        element.focus()
+      }
+    }
   }
 }
 </script>
