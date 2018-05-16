@@ -1,8 +1,8 @@
 {
-  "name": "vue-skip-to-content",
+  "name": "vue-skip-to",
   "version": "0.0.1",
   "description": "It helps people who only use the keyboard to jump to what matters most.",
-  "main": "dist/vue-skip-to-content.js",
+  "main": "dist/vue-skip-to.js",
   "scripts": {
     "dev": "rollup --config rollup.config.dev.js --watch",
     "dist": "rollup --config rollup.config.prod.js",
@@ -13,21 +13,21 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/vue-a11y/vue-skip-to-content.git"
+    "url": "git+https://github.com/vue-a11y/vue-skip-to.git"
   },
   "keywords": [
     "a11y",
     "accessibility",
-    "skip-to-content",
+    "skip to main content",
     "vue.js",
     "keyboard"
   ],
   "author": "Alan Ktquez <ktquez@gmail.com> (https://medium.com/@ktquez)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/vue-a11y/vue-skip-to-content/issues"
+    "url": "https://github.com/vue-a11y/vue-skip-to/issues"
   },
-  "homepage": "https://github.com/vue-a11y/vue-skip-to-content#readme",
+  "homepage": "https://github.com/vue-a11y/vue-skip-to#readme",
   "devDependencies": {
     "babel-core": "^6.26.3",
     "babel-eslint": "^8.2.3",

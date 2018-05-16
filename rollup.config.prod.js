@@ -19,8 +19,8 @@ export default {
   ],
   output: [
     {
-      name: 'VueSkipToContent',
-      file: 'dist/vue-skip-to-content.js',
+      name: 'VueSkipTo',
+      file: 'dist/vue-skip-to.js',
       format: 'umd'
     }
   ]
