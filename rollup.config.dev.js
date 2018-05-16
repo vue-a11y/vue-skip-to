@@ -18,6 +18,9 @@ export default {
       include: './src/**'
     }),
     babel({
+      include: [
+        'node_modules/vue-template-es2015-compiler'
+      ],
       exclude: './node_modules/**'
     }),
     resolve(),
@@ -26,7 +29,7 @@ export default {
       'process.env.NODE_ENV': JSON.stringify('development')
     }),
     serve({
-      verbose: false,
+      verbose: true,
       contentBase: 'demo',
       historyApiFallback: true
     }),
@@ -37,7 +40,7 @@ export default {
   output: [
     {
       name: 'VueSkipTo',
-      file: 'vue-skip-to.js',
+      file: 'demo/vue-skip-to.js',
       format: 'umd'
     }
   ]

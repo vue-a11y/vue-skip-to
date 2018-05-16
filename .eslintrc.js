@@ -5,7 +5,10 @@ module.exports = {
     browser: true,
     node: true
   },
-  extends: 'standard',
+  extends: [
+    'standard',
+    'plugin:vue/essential'
+  ],
   plugins: [
     "cypress"
   ],
