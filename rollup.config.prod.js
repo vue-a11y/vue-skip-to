@@ -8,6 +8,9 @@ export default {
   input: 'src/index.js',
   plugins: [
     babel({
+      include: [
+        'node_modules/vue-template-es2015-compiler'
+      ],
       exclude: 'node_modules/**'
     }),
     butternut(),
