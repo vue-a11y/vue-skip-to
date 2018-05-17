@@ -6,3 +6,4 @@ demo/node_modules
 demo/build
 demo/package-lock.json
 demo/vue-skip-to.js
+demo/CNAME
