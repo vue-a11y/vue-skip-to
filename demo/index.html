@@ -11,14 +11,16 @@
       background-color: yellow;
     }
   </style>
-  
+
+  <script src="https://unpkg.com/vue"></script>
+  <script src="vue-skip-to.js"></script>
 </head>
 <body>
 
   <div id="app">
     <vue-skip-to data-vst="skip-to"></vue-skip-to>
     <header>
-      <h1>Vue.js skip to</h1>
+      <h1>Press tab</h1>
 
       <nav role="navigation">
           <ul>
@@ -44,9 +46,6 @@
     </div>
 
   </div>
-
-  <script src="https://unpkg.com/vue"></script>
-  <script src="vue-skip-to.js"></script>
   <script>
     var App = new Vue({
       el: '#app'
