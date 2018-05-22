@@ -3,7 +3,7 @@ import replace from 'rollup-plugin-replace'
 import VueLoader from 'rollup-plugin-vue'
 import serve from 'rollup-plugin-serve'
 import livereload from 'rollup-plugin-livereload'
-import babel from 'rollup-plugin-babel'
+import buble from 'rollup-plugin-buble'
 import eslint from 'rollup-plugin-eslint'
 import chokidar from 'chokidar'
 
@@ -17,14 +17,18 @@ export default {
     eslint({
       include: './src/**'
     }),
-    babel({
-      include: [
-        'node_modules/vue-template-es2015-compiler'
-      ],
-      exclude: './node_modules/**'
+    VueLoader({
+      compileTemplate: true
     }),
-    resolve(),
-    VueLoader(),
+    buble({
+      objectAssign: 'Object.assign',
+      jsx: 'h'
+    }),
+    resolve({
+      jsnext: true,
+      main: true,
+      browser: true
+    }),
     replace({
       'process.env.NODE_ENV': JSON.stringify('development')
     }),
