@@ -19,7 +19,7 @@ npm install -S vue-skip-to
 
 #### Yarn
 ```shell
-yarn add -S vue-skip-to
+yarn add vue-skip-to
 ```
 
 ## How to use
