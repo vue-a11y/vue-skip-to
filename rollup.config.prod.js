@@ -1,7 +1,7 @@
 import resolve from 'rollup-plugin-node-resolve'
 import replace from 'rollup-plugin-replace'
 import VueLoader from 'rollup-plugin-vue'
-// import butternut from 'rollup-plugin-butternut'
+import butternut from 'rollup-plugin-butternut'
 import buble from 'rollup-plugin-buble'
 
 export default {
@@ -14,7 +14,7 @@ export default {
       objectAssign: 'Object.assign',
       jsx: 'h'
     }),
-    // butternut(),
+    butternut(),
     resolve({
       jsnext: true,
       main: true,
