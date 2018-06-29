@@ -32,7 +32,6 @@ export default {
       }, false)
 
       if (location.hash && location.hash.substring(1)) {
-        console.log(location.hash.substring(1))
         this.focusElement(location.hash.substring(1))
       }
     },
@@ -42,7 +41,6 @@ export default {
       let element = window.document.getElementById(id)
       if (element) {
         if (!/^(a|select|input|button|textarea)/i.test(element.tagName.toLowerCase())) {
-          console.log('entrou')
           element.setAttribute('tabindex', -1)
         }
         element.focus()
