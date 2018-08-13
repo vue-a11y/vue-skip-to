@@ -35,7 +35,7 @@ In your `App.vue`
 ```vue
 <template>
   <div id="app">
-    <vue-skip-to to="#main" test="Skip to main content" />
+    <vue-skip-to to="#main" text="Skip to main content" />
 
     <logo :src="require('@/assets/logo.png')" />
     <h1 data-va="main header">{{ msg }}</h1>
