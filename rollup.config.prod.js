@@ -3,6 +3,7 @@ import replace from 'rollup-plugin-replace'
 import VueLoader from 'rollup-plugin-vue'
 import butternut from 'rollup-plugin-butternut'
 import buble from 'rollup-plugin-buble'
+import copy from 'rollup-plugin-copy'
 
 export default {
   input: 'src/index.js',
@@ -22,6 +23,9 @@ export default {
     }),
     replace({
       'process.env.NODE_ENV': JSON.stringify('production')
+    }),
+    copy({
+      'src/skip-to.vue': 'dist/vue-skip-to.vue'
     })
   ],
   output: [
