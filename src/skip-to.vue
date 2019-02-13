@@ -1,5 +1,7 @@
 <template>
-  <a class="vue-skip-to" :href="to" :tabindex="tabindex" v-text="text"></a>
+  <a class="vue-skip-to" :href="to" :tabindex="tabindex">
+    <slot>{{ text }}</slot>
+  </a>
 </template>
 
 <script>
