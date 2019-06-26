@@ -29,6 +29,10 @@ import Vue from 'vue'
 import VueSkipTo from 'vue-skip-to'
 
 Vue.use(VueSkipTo)
+
+new Vue({
+  //... options
+})
 ```
 
 In your `App.vue`
