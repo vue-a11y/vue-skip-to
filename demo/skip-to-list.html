@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Using vue-skip-to</title>
+
+  <style>
+    main:focus, footer:focus {
+      background-color: yellow;
+    }
+  </style>
+
+  <script src="https://unpkg.com/vue"></script>
+  <script src="vue-skip-to.js"></script>
+</head>
+<body>
+
+  <div id="app">
+    <vue-skip-to-list :to="[
+      {anchor: '#main', label: 'Main'},
+      {anchor: '#footer', label: 'Footer'},
+    ]">
+      Skip links
+    </vue-skip-to-list>
+
+    <header>
+      <h1>Press tab</h1>
+    </header>
+
+    <main id="main">
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ornare elit vitae felis tincidunt commodo. Phasellus volutpat pharetra consectetur. Mauris eu orci fermentum, maximus odio ut, consequat dui. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Donec et tortor sagittis, euismod risus vel, pulvinar urna. Suspendisse non facilisis leo. Quisque rhoncus vel mauris sed dapibus. Nunc nibh mauris, fringilla ut nisi at, maximus varius magna. Proin hendrerit a orci quis ullamcorper. Curabitur molestie eros quis eros tempus auctor. Proin luctus nibh quis sem dictum tempus. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Sed eleifend, tortor tristique efficitur egestas, nulla libero tincidunt quam, vel pulvinar velit nulla id libero. Maecenas nisl quam, dictum in tempus in, ultrices a felis.
+      </p>
+      <p>
+        Aliquam mattis convallis est et cursus. Phasellus tincidunt efficitur dui, non fringilla ipsum dignissim nec. Nam consectetur ante vitae malesuada rutrum. Praesent nec varius magna. Sed sem nisi, tempor eu venenatis vitae, consectetur eu sapien. Suspendisse sit amet massa lacinia purus ultrices lacinia. Aliquam non cursus quam, ac elementum enim. Morbi dignissim lacus nulla, sit amet interdum diam eleifend in. In hac habitasse platea dictumst. Suspendisse eget erat eu eros placerat pharetra vel eget metus. Morbi porta ex sed erat vestibulum, ac varius ex euismod. Nunc iaculis ornare lacus a egestas. Cras cursus facilisis mi, nec vulputate leo. Fusce varius varius arcu sit amet mollis.
+      </p>
+    </main>
+
+    <footer id="footer">
+      <p>
+        Sed elit nunc, volutpat in urna vel, hendrerit vulputate justo. Etiam pulvinar id ligula in ultrices. Suspendisse nulla risus, accumsan quis sagittis ac, faucibus eget dolor. Curabitur ullamcorper magna eget consequat facilisis. Cras massa leo, tristique nec tempus ac, auctor in arcu. Quisque a faucibus ex, congue eleifend ante. Praesent ultrices arcu neque, eget lacinia erat ultrices eget.
+      </p>
+    </footer>
+  </div>
+  <script>
+    var App = new Vue({
+      el: '#app'
+    })
+  </script>
+</body>
+</html>
