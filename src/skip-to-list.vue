@@ -1,33 +1,31 @@
 <template>
   <div :class="containerClassNames">
+    <label>
 
-    <!-- TODO: fix label to handle multiple instances of nav list -->
-    <p class="vue-skip-to__label" id="vue-skip-to__label">
-      <slot>Skip to</slot>
-    </p>
+      <p class="vue-skip-to__label">
+        <slot>Skip to</slot>
+      </p>
 
-    <nav
-      class="vue-skip-to__nav"
-      aria-labelledby="vue-skip-to__label"
-    >
-      <ul class="vue-skip-to__nav-list">
-        <li
-          v-for="el in to"
-          :key="el.anchor"
-          class="vue-skip-to__nav-list-item"
-        >
-          <vue-skip-to
-            :to="el.anchor"
-            @focus="labelVisible = true"
-            @blur="labelVisible = false"
-            class="vue-skip-to vue-skip-to--relative"
+      <nav class="vue-skip-to__nav">
+        <ul class="vue-skip-to__nav-list">
+          <li
+            v-for="el in to"
+            :key="el.anchor"
+            class="vue-skip-to__nav-list-item"
           >
-            {{ el.label }}
-          </vue-skip-to>
-        </li>
-      </ul>
-    </nav>
+            <vue-skip-to
+              :to="el.anchor"
+              @focus="labelVisible = true"
+              @blur="labelVisible = false"
+              class="vue-skip-to vue-skip-to--relative"
+            >
+              {{ el.label }}
+            </vue-skip-to>
+          </li>
+        </ul>
+      </nav>
 
+    </label>
   </div>
 </template>
 
@@ -36,6 +34,7 @@ export default {
   name: 'VueSkipToList',
 
   props: {
+    // TODO: allow modifying `<skip-to>` props
     to: {
       validator: function (val) {
         return Array.isArray(val) &&
