@@ -18,10 +18,13 @@
 <body>
 
   <div id="app">
-    <vue-skip-to-list :to="[
-      {anchor: '#main', label: 'Main'},
-      {anchor: '#footer', label: 'Footer'},
-    ]">
+    <vue-skip-to-list
+      :to="[
+        {anchor: '#main', label: 'Main'},
+        {anchor: '#footer', label: 'Footer'},
+      ]"
+      data-vst="skip-to-list"
+    >
       Skip links
     </vue-skip-to-list>
 
