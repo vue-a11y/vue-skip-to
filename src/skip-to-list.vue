@@ -15,6 +15,7 @@
           >
             <vue-skip-to
               :to="el.anchor"
+              :ariaLabel="el.ariaLabel"
               @focus="labelVisible = true"
               @blur="labelVisible = false"
               class="vue-skip-to vue-skip-to--relative"
