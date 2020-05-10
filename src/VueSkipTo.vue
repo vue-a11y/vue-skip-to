@@ -23,26 +23,28 @@ export default {
     this.init()
   },
 
+  beforeDestroy () {
+    window.removeEventListener('hashchange', this.handleFocusElement, false)
+  },
+
   methods: {
     init () {
-      window.addEventListener('hashchange', () => {
-        this.focusElement(location.hash.substring(1))
-      }, false)
+      window.addEventListener('hashchange', this.handleFocusElement, false)
+      if (location.hash && location.hash.substring(1)) this.handleFocusElement()
+    },
 
-      if (location.hash && location.hash.substring(1)) {
-        this.focusElement(location.hash.substring(1))
-      }
+    handleFocusElement () {
+      this.focusElement(location.hash.substring(1))
     },
 
     focusElement (id) {
       if (!id) return
       const element = window.document.getElementById(id)
-      if (element) {
-        if (!/^(a|select|input|button|textarea)/i.test(element.tagName.toLowerCase())) {
-          element.setAttribute('tabindex', -1)
-        }
-        element.focus()
+      if (!element) return
+      if (!/^(a|select|input|button|textarea)/i.test(element.tagName.toLowerCase())) {
+        element.setAttribute('tabindex', -1)
       }
+      element.focus()
     }
   }
 }
