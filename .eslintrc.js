@@ -1,7 +1,7 @@
 module.exports = {
   root: true,
   env: {
-    "cypress/globals": true,
+    'cypress/globals': true,
     browser: true,
     node: true
   },
@@ -10,7 +10,7 @@ module.exports = {
     'plugin:vue/essential'
   ],
   plugins: [
-    "cypress"
+    'cypress'
   ],
   // add your custom rules here
   rules: {},
