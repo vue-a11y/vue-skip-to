@@ -52,19 +52,23 @@ export default {
 
 <style>
 .vue-skip-to {
-  position: absolute;
-  left: -10000px;
-  top: 0;
-  z-index: 1000;
-  min-width: 1px;
-  min-height: 1px;
+  position: fixed;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
   overflow: hidden;
-  padding: 8px 10px;
-  color: #fff
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
 }
 
 .vue-skip-to:focus {
-  background-color: #800000;
   left: 0;
+  top: 0;
+  clip: auto;
+  height: auto;
+  width: auto;
+  padding: 8px 10px;
 }
 </style>
