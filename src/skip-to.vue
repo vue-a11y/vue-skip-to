@@ -1,5 +1,5 @@
 <template>
-  <a class="vue-skip-to" :href="to" :tabindex="tabindex">
+  <a class="vue-skip-to" :href="to">
     <slot>{{ text }}</slot>
   </a>
 </template>
@@ -16,10 +16,6 @@ export default {
     to: {
       type: String,
       default: '#main'
-    },
-    tabindex: {
-      type: [Number, null],
-      default: null
     }
   },
 
@@ -40,7 +36,7 @@ export default {
 
     focusElement (id) {
       if (!id) return
-      let element = window.document.getElementById(id)
+      const element = window.document.getElementById(id)
       if (element) {
         if (!/^(a|select|input|button|textarea)/i.test(element.tagName.toLowerCase())) {
           element.setAttribute('tabindex', -1)
