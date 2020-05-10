@@ -1,5 +1,5 @@
 {
-  "name": "vue-skip-to",
+  "name": "@vue-a11y/skip-to",
   "version": "1.0.6",
   "description": "It helps people who only use the keyboard to jump to what matters most.",
   "main": "dist/vue-skip-to.umd.js",
