@@ -2,6 +2,8 @@ import buble from '@rollup/plugin-buble'
 import resolve from '@rollup/plugin-node-resolve'
 import chokidar from 'chokidar'
 import { eslint } from 'rollup-plugin-eslint'
+import livereload from 'rollup-plugin-livereload'
+import serve from 'rollup-plugin-serve'
 import vue from 'rollup-plugin-vue'
 
 export default {
@@ -19,7 +21,16 @@ export default {
       css: true,
       compileTemplate: true
     }),
-    buble()
+    buble(),
+    serve({
+      port: 5000,
+      verbose: true,
+      contentBase: 'demo',
+      historyApiFallback: true
+    }),
+    livereload({
+      watch: 'demo'
+    })
   ],
   output: [
     {
