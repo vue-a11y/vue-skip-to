@@ -14,19 +14,19 @@ https://www.w3.org/TR/WCAG20-TECHS/G124.html
 ## Install
 #### NPM
 ```shell
-npm install -S vue-skip-to
+npm install -S @vue-a11y/skip-to
 ```
 
 #### Yarn
 ```shell
-yarn add vue-skip-to
+yarn add @vue-a11y/skip-to
 ```
 
 ## How to use
 In your `main.js`
 ```javascript
 import Vue from 'vue'
-import VueSkipTo from 'vue-skip-to'
+import VueSkipTo from '@vue-a11y/skip-to'
 
 Vue.use(VueSkipTo)
 
@@ -39,7 +39,7 @@ In your `App.vue`
 ```vue
 <template>
   <div id="app">
-    <vue-skip-to to="#main" text="Skip to main content" />
+    <VueSkipTo to="#main" text="Skip to main content" />
 
     <logo :src="require('@/assets/logo.png')" />
     <h1 data-va="main header">{{ msg }}</h1>
@@ -63,6 +63,9 @@ export default {
 ## Using with HTML files
 ```html
 <!--omitted -->
+  <script src="https://unpkg.com/vue"></script>
+  <script src="https://unpkg.com/@vue-a11y/skip-to"></script>
+</head>
 <body>
   <div id="app">
     <vue-skip-to to="#main"></vue-skip-to>
@@ -74,14 +77,10 @@ export default {
     </div>
   </div>
 
-  <script src="https://unpkg.com/vue"></script>
-  <script src="https://unpkg.com/vue-skip-to"></script>
   <script>
-    Vue.use(VueSkipTo)
     new Vue({
       el: "#app"
     })
-
   </script>
 </body>
 </html>
@@ -96,8 +95,6 @@ Prop            | Data Type  | required  | Description            | Default
 --------------- | ---------- | --------- | ---------------------- | -------------
 `to`            | String     | false     | Set destination ID     | #main
 `text`          | String     | false     | Text content of link   | Skip to main content
-`tabindex`      | String     | false     | Specifies the tab order   | null
-
 
 ## Custom style
 You can style the link through the selector `.vue-skip-to`
@@ -113,25 +110,22 @@ http://www.nczonline.net/blog/2013/01/15/fixing-skip-to-content-links/
 ## Run the tests
 
 ```shell
-git clone https://github.com/vue-a11y/vue-skip-to.git vue-skip-to
+git clone https://github.com/vue-a11y/vue-skip-to.git 
 npm install
 npm run dev
-npm run test
+npm run test:e2e
 ```
 
 Or run Cypress on interactive mode
 ```shell
-npm run test:open
+npm run test:e2e:open
 ```
 
-## Roadmap
-https://github.com/vue-a11y/vue-skip-to/issues/1
-
 ## Contributing
+- From typos in documentation to coding new features;
 - Check the open issues or open a new issue to start a discussion around your feature idea or the bug you found;
 - Fork repository, make changes and send a pull request;
 
-If you want a faster communication, find me on [@ktquez](https://twitter.com/ktquez)
-And follow us on Twitter [@vue_a11y](https://twitter.com/vue_a11y)
+Follow us on Twitter [@vue_a11y](https://twitter.com/vue_a11y)
 
 **Thank you**
