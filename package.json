@@ -66,6 +66,7 @@
     "babel-jest": "^26.0.1",
     "chokidar": "^3.4.0",
     "cypress": "^4.5.0",
+    "cypress-plugin-tab": "^1.0.5",
     "eslint": "^7.0.0",
     "eslint-plugin-cypress": "^2.10.3",
     "eslint-plugin-import": "^2.20.2",
