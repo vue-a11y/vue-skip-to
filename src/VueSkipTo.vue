@@ -3,6 +3,8 @@
     class="vue-skip-to"
     :href="to"
     @click.prevent="handleFocusElement"
+    @focus="$emit('focus')"
+    @blur="$emit('blur')"
   >
     <slot>{{ text }}</slot>
   </a>
