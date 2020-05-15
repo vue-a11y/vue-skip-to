@@ -39,7 +39,7 @@ export default {
     to: {
       validator: function (val) {
         return Array.isArray(val) &&
-          val.every(({anchor, label}) => (
+          val.every(({ anchor, label }) => (
             typeof anchor === 'string' &&
               anchor.startsWith('#') &&
               typeof String(label) === 'string'
