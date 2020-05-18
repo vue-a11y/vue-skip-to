@@ -56,7 +56,7 @@ export default {
   border-width: 0;
 }
 
-.vue-skip-to:focus {
+.vue-skip-to:focus, .vue-skip-to:hover {
   left: 0;
   top: 0;
   clip: auto;
