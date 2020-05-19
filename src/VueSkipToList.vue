@@ -1,41 +1,36 @@
 <template>
-  <div :class="containerClassNames">
-    <label>
-
-      <p class="vue-skip-to__label">
-        <slot>Skip to</slot>
-      </p>
-
-      <nav class="vue-skip-to__nav">
-        <ul class="vue-skip-to__nav-list">
-          <li
-            v-for="el in to"
-            :key="el.anchor"
-            class="vue-skip-to__nav-list-item"
-          >
-            <vue-skip-to
-              :to="el.anchor"
-              :aria-label="el.ariaLabel"
-              @focus="labelVisible = true"
-              @blur="labelVisible = false"
-              class="vue-skip-to vue-skip-to--relative"
-            >
-              {{ el.label }}
-            </vue-skip-to>
-          </li>
-        </ul>
-      </nav>
-
-    </label>
-  </div>
+  <nav class="vue-skip-to__nav">
+    <span id="list-title">{{ titleList }}</span>
+    <ul class="vue-skip-to__nav-list">
+      <li
+        v-for="el in to"
+        :key="el.anchor"
+        class="vue-skip-to__nav-list-item"
+        @keydown.prevent.up="handleKeydown"
+        @keydown.prevent.down="handleKeydown"
+      >
+        <VueSkipToSingle
+          :to="el.anchor"
+          :aria-label="el.ariaLabel || `${titleList} ${el.label}`"
+        >
+          {{ el.label }}
+        </VueSkipToSingle>
+      </li>
+    </ul>
+  </nav>
 </template>
 
 <script>
+import VueSkipToSingle from './VueSkipToSingle.vue'
+
 export default {
   name: 'VueSkipToList',
 
   props: {
-    // TODO: allow modifying `<skip-to>` props
+    titleList: {
+      type: String,
+      default: 'Skip to'
+    },
     to: {
       validator: function (val) {
         return Array.isArray(val) &&
@@ -48,68 +43,20 @@ export default {
     }
   },
 
-  data () {
-    return {
-      labelVisible: false
-    }
+  components: {
+    VueSkipToSingle
   },
 
-  computed: {
-    containerClassNames: function () {
-      return {
-        'vue-skip-to__list-container': true,
-        'vue-skip-to__list-container--focus': this.labelVisible
-      }
+  methods: {
+    handleKeydown ({ key, target }) {
+      const parent = target.parentElement
+      const itemList = key === 'ArrowUp' ? parent.previousElementSibling : parent.nextElementSibling
+
+      if (!itemList) return
+
+      const link = itemList.getElementsByTagName('a')
+      if (link.length) link[0].focus()
     }
   }
-
 }
 </script>
-
-<style scoped>
-.vue-skip-to__list-container {
-  position: absolute;
-  left: -10000px;
-  top: 0;
-  border: 1px solid #000;
-}
-
-.vue-skip-to__list-container--focus {
-  background-color: #fff;
-  left: 0;
-}
-
-.vue-skip-to__label {
-  font-weight: 800;
-  margin: 8px 0 0 0;
-  padding: 8px 24px 8px 10px;
-  border-bottom: 1px solid #000;
-}
-
-.vue-skip-to__nav-list {
-  display: flex;
-  flex-direction: column;
-  padding: 0;
-  margin: 0 0 10px 0;
-  list-style-type: none;
-}
-
-.vue-skip-to__nav-list-item {
-  position: relative;
-}
-
-/* override `<vue-skip-to>` styles */
-.vue-skip-to.vue-skip-to--relative {
-  position: relative;
-  left: unset;
-  top: unset;
-  display: block;
-  padding: 8px 24px 8px 10px;
-  color: #000;
-  text-decoration: none;
-}
-
-.vue-skip-to.vue-skip-to--relative:focus {
-  color: #fff;
-}
-</style>
