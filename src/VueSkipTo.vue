@@ -1,49 +1,55 @@
 <template>
-  <a
-    class="vue-skip-to"
-    :href="to"
-    @click.prevent="handleFocusElement"
-    @focus="$emit('focus')"
-    @blur="$emit('blur')"
-  >
-    <slot>{{ text }}</slot>
-  </a>
+  <div class="vue-skip-to">
+    <component :is="comp" v-bind="props" />
+  </div>
 </template>
 
 <script>
+import VueSkipToSingle from './VueSkipToSingle.vue'
+import VueSkipToList from './VueSkipToList.vue'
+
 export default {
   name: 'VueSkipTo',
 
   props: {
-    text: {
+    titleList: {
+      type: String,
+      default: 'Skip to'
+    },
+    label: {
       type: String,
       default: 'Skip to main content'
     },
     to: {
-      type: String,
+      type: [String, Array],
       default: '#main'
     }
   },
 
-  methods: {
-    handleFocusElement ({ target }) {
-      this.focusElement(target.getAttribute('href').substring(1))
+  computed: {
+    isList () {
+      return Array.isArray(this.to)
     },
 
-    focusElement (id) {
-      if (!id) return
-      const element = window.document.getElementById(id)
-      if (!element) return
-      if (!/^(a|select|input|button|textarea)/i.test(element.tagName.toLowerCase())) {
-        element.setAttribute('tabindex', -1)
-      }
-      element.focus()
+    comp () {
+      return this.isList ? VueSkipToList : VueSkipToSingle
+    },
+
+    props () {
+      if (this.isList) return { titleList: this.titleList, to: this.to }
+      return { label: this.label, to: this.to }
     }
   }
 }
 </script>
 
 <style>
+.vue-skip-to * {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
 .vue-skip-to {
   position: fixed;
   width: 1px;
@@ -56,12 +62,40 @@ export default {
   border-width: 0;
 }
 
-.vue-skip-to:focus, .vue-skip-to:hover {
+.vue-skip-to:focus-within, .vue-skip-to:focus, .vue-skip-to:hover {
   left: 0;
   top: 0;
   clip: auto;
   height: auto;
   width: auto;
-  padding: 8px 10px;
+  background-color: white;
+  border: 2px solid #333;
 }
+
+.vue-skip-to__nav-list {
+  list-style-type: none;
+}
+
+.vue-skip-to__nav > span, .vue-skip-to__link {
+  display: block;
+  padding: 8px 16px;
+  color: #333;
+  font-size: 18px;
+}
+
+.vue-skip-to__nav > span {
+  border-bottom: 2px solid #333;
+  font-weight: bold;
+}
+
+.vue-skip-to__link {
+  text-decoration: none;
+}
+
+.vue-skip-to__link:focus {
+  outline: none;
+  background-color: #333;
+  color: #f2f2f2;
+}
+
 </style>
