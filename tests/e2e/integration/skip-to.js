@@ -13,7 +13,7 @@ describe('Skip to main content', () => {
   })
 
   it('Checks if destination is receiving focus', () => {
-    cy.get('[data-vst="skip-to"]').focus().click()
+    cy.get('body').tab().click()
     cy.focused().should('have.id', 'main')
   })
 })
@@ -33,7 +33,7 @@ describe('Skip to search', () => {
   })
 
   it('The input search must receive the focus', () => {
-    cy.get('[data-vst="skip-to"]').focus().click()
+    cy.get('body').tab().click()
     cy.focused().should('have.id', 'search')
   })
 })
