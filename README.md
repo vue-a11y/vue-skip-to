@@ -28,11 +28,11 @@ yarn add @vue-a11y/skip-to
 
 ## How to use
 
-## Vue SFC
-
-In your `main.js`
+### Vue SFC
 
 ```javascript
+// main.js
+
 import Vue from 'vue'
 import VueSkipTo from '@vue-a11y/skip-to'
 
@@ -43,16 +43,17 @@ new Vue({
 })
 ```
 
-In your `App.vue`
-
 ```vue
+// App.vue
 <template>
   <div id="app">
     <VueSkipTo to="#main" text="Skip to main content" />
 
     <logo :src="require('@/assets/logo.png')" />
     <h1 data-va="main header">{{ msg }}</h1>
-    ...
+
+    <!-- header, navigation, and more -->
+
     <div id="main" role="main">
       <!-- My content -->
     </div>
@@ -63,11 +64,46 @@ In your `App.vue`
 export default {
   name: 'app'
   components: {
-    Logo
+    Logo,
+    VueSkipTo,
   },
   //...
 }
 </script>
+```
+
+#### Skip-to list
+
+To use multiple links, simply pass an array into the `to` prop with the following shape:
+
+```json
+[
+  {
+    anchor: '<STRING>',  // destination id
+    label: '<STRING>',   // link text
+  },
+  //...
+]
+```
+
+```vue
+// App.vue
+<template>
+  <div id="app">
+    <vue-skip-to
+      title-list="Skip to"
+      :to="[
+        { anchor: '#main', label: 'Main content' },
+        { anchor: '#footer', label: 'Footer' },
+      ]"
+    ></vue-skip-to>
+
+    <!-- header, navigation, and more -->
+
+    <main id="main"></div>
+    <footer id="footer"></div>
+  </div>
+</template>
 ```
 
 ### In HTML files
@@ -103,10 +139,11 @@ export default {
 
 ## Props
 
-Prop            | Data Type  | required  | Description            | Default
---------------- | ---------- | --------- | ---------------------- | -------------
-`to`            | String     | false     | Set destination ID     | #main
-`text`          | String     | false     | Text content of link   | Skip to main content
+Prop            | Data Type       | required  | Description                                     | Default
+--------------- | --------------- | --------- | ----------------------------------------------- | -------------
+`to`            | String | Array  | false     | Destination ID or [array of destination objects](###skip-to-list)  | #main
+`label`         | String          | false     | Skip link text content                          | Skip to main content
+`titleList`     | String          | false     | Skip link list label text                       | Skip to
 
 ## Custom style
 
