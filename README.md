@@ -2,7 +2,6 @@
 
 > Helps people who only use the keyboard to jump to what matters most
 
-## About
 
 The population grows very fast nowadays and with that the number of visually impaired increases as well. Did you know that we have over 350 million visually impaired people in the world?
 
@@ -12,21 +11,19 @@ However, we are responsible for doing our utmost to make our applications usable
 
 This pattern is detailed in the Techniques for WCAG 2.0 in notes [G1](https://www.w3.org/TR/WCAG20-TECHS/G1.html) and [G124](https://www.w3.org/TR/WCAG20-TECHS/G124.html), and also served as the inspiration for creating this component.
 
-## Install
+[Check out the live demo!](https://vue-skip-to.surge.sh)
 
-### NPM
+## Installation
 
 ```shell
+// npm
 npm install -S @vue-a11y/skip-to
-```
 
-### Yarn
-
-```shell
+// yarn
 yarn add @vue-a11y/skip-to
 ```
 
-## How to use
+## Usage
 
 ### Vue SFC
 
@@ -39,24 +36,22 @@ import VueSkipTo from '@vue-a11y/skip-to'
 Vue.use(VueSkipTo)
 
 new Vue({
-  //... options
+  //...
 })
 ```
 
 ```vue
 // App.vue
+
 <template>
   <div id="app">
     <VueSkipTo to="#main" text="Skip to main content" />
 
-    <logo :src="require('@/assets/logo.png')" />
-    <h1 data-va="main header">{{ msg }}</h1>
-
     <!-- header, navigation, and more -->
 
-    <div id="main" role="main">
-      <!-- My content -->
-    </div>
+    <main id="main">
+      <!-- content -->
+    </main>
   </div>
 </template>
 
@@ -79,15 +74,16 @@ To use multiple links, simply pass an array into the `to` prop with the followin
 ```json
 [
   {
-    anchor: '<STRING>',  // destination id
-    label: '<STRING>',   // link text
-  },
+    "anchor": "<STRING>", // destination id
+    "label": "<STRING>" // link text
+  }
   //...
 ]
 ```
 
 ```vue
 // App.vue
+
 <template>
   <div id="app">
     <vue-skip-to
@@ -101,6 +97,7 @@ To use multiple links, simply pass an array into the `to` prop with the followin
     <!-- header, navigation, and more -->
 
     <main id="main"></div>
+
     <footer id="footer"></div>
   </div>
 </template>
@@ -117,11 +114,11 @@ To use multiple links, simply pass an array into the `to` prop with the followin
   <div id="app">
     <vue-skip-to to="#main"></vue-skip-to>
 
-    <!-- my header, navigation, and more -->
+    <!-- header, navigation, and more -->
 
-    <div id="main" role="main">
-      <!-- My content -->
-    </div>
+    <main id="main">
+      <!-- content -->
+    </main>
   </div>
 
   <script>
@@ -133,31 +130,24 @@ To use multiple links, simply pass an array into the `to` prop with the followin
 </html>
 ```
 
-## Live demo
-
-[https://vue-skip-to.surge.sh](https://vue-skip-to.surge.sh)
-
 ## Props
 
-Prop            | Data Type       | required  | Description                                     | Default
---------------- | --------------- | --------- | ----------------------------------------------- | -------------
-`to`            | String | Array  | false     | Destination ID or [array of destination objects](###skip-to-list)  | #main
-`label`         | String          | false     | Skip link text content                          | Skip to main content
-`titleList`     | String          | false     | Skip link list label text                       | Skip to
+| Prop        | Data Type       | required | Description                                                       | Default                |
+| ----------- | --------------- | -------- | ----------------------------------------------------------------- | ---------------------- |
+| `to`        | String \| Array | false    | Destination ID or [array of destination objects](###skip-to-list) | '#main'                |
+| `label`     | String          | false    | Skip link text content                                            | 'Skip to main content' |
+| `titleList` | String          | false    | Skip link list label text                                         | 'Skip to'              |
 
-## Custom style
+## Custom styling
 
-You can style the link through the selector `.vue-skip-to`.
+Override the default styles by targeting the following:
 
-## Feature
+```css
+.vue-skip-to {
+}
+```
 
-Inspired by [this article](http://www.nczonline.net/blog/2013/01/15/fixing-skip-to-content-links/).
-
-- This component working in all modern browsers and IE9;
-- Ensures that the target element receives focus, even if it is not a tag that naturally receives focus as the tag `input` and `a`. In this case, the `div` are also given the focus and the `tabindex` attribute with the value of `-1`;
-- Add focus to the destination, even when the address bar already has the corresponding hash;
-
-## Run the tests
+## Running tests
 
 ```shell
 git clone https://github.com/vue-a11y/vue-skip-to.git
@@ -171,6 +161,14 @@ Or run Cypress on interactive mode
 ```shell
 npm run test:e2e:open
 ```
+
+## About
+
+This component was inspired by [this article](http://www.nczonline.net/blog/2013/01/15/fixing-skip-to-content-links/).
+
+- This component working in all modern browsers and IE9;
+- Ensures that the target element receives focus, even if it is not a tag that naturally receives focus as the tag `input` and `a`. In this case, the `div` are also given the focus and the `tabindex` attribute with the value of `-1`;
+- Add focus to the destination, even when the address bar already has the corresponding hash;
 
 ## Contributing
 
