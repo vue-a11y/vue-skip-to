@@ -1,5 +1,8 @@
 # vue-skip-to
-It helps people who only use the keyboard to jump to what matters most
+
+> Helps people who only use the keyboard to jump to what matters most
+
+## About
 
 The population grows very fast nowadays and with that the number of visually impaired increases as well. Did you know that we have over 350 million visually impaired people in the world?
 
@@ -7,23 +10,28 @@ However, we are responsible for doing our utmost to make our applications usable
 
 "Skip to content" or "skip to a section" of your site is one of the most common accessibility techniques today, but not as used as it should be.
 
-In addition to being a technique recommended by WCAG 2.0, that's where this component was inspired.
-https://www.w3.org/TR/WCAG20-TECHS/G1.html  
-https://www.w3.org/TR/WCAG20-TECHS/G124.html
+This pattern is detailed in the Techniques for WCAG 2.0 in notes [G1](https://www.w3.org/TR/WCAG20-TECHS/G1.html) and [G124](https://www.w3.org/TR/WCAG20-TECHS/G124.html), and also served as the inspiration for creating this component.
 
 ## Install
-#### NPM
+
+### NPM
+
 ```shell
 npm install -S @vue-a11y/skip-to
 ```
 
-#### Yarn
+### Yarn
+
 ```shell
 yarn add @vue-a11y/skip-to
 ```
 
 ## How to use
+
+## Vue SFC
+
 In your `main.js`
+
 ```javascript
 import Vue from 'vue'
 import VueSkipTo from '@vue-a11y/skip-to'
@@ -36,6 +44,7 @@ new Vue({
 ```
 
 In your `App.vue`
+
 ```vue
 <template>
   <div id="app">
@@ -49,6 +58,7 @@ In your `App.vue`
     </div>
   </div>
 </template>
+
 <script>
 export default {
   name: 'app'
@@ -60,7 +70,8 @@ export default {
 </script>
 ```
 
-## Using with HTML files
+### In HTML files
+
 ```html
 <!--omitted -->
   <script src="https://unpkg.com/vue"></script>
@@ -86,22 +97,24 @@ export default {
 </html>
 ```
 
-## Check live demo
-https://vue-skip-to.surge.sh
+## Live demo
 
+[https://vue-skip-to.surge.sh](https://vue-skip-to.surge.sh)
 
 ## Props
+
 Prop            | Data Type  | required  | Description            | Default
 --------------- | ---------- | --------- | ---------------------- | -------------
 `to`            | String     | false     | Set destination ID     | #main
 `text`          | String     | false     | Text content of link   | Skip to main content
 
 ## Custom style
-You can style the link through the selector `.vue-skip-to`
+
+You can style the link through the selector `.vue-skip-to`.
 
 ## Feature
-Inspired by this article, to know more, access the link:  
-http://www.nczonline.net/blog/2013/01/15/fixing-skip-to-content-links/
+
+Inspired by [this article](http://www.nczonline.net/blog/2013/01/15/fixing-skip-to-content-links/).
 
 - This component working in all modern browsers and IE9;
 - Ensures that the target element receives focus, even if it is not a tag that naturally receives focus as the tag `input` and `a`. In this case, the `div` are also given the focus and the `tabindex` attribute with the value of `-1`;
@@ -110,18 +123,20 @@ http://www.nczonline.net/blog/2013/01/15/fixing-skip-to-content-links/
 ## Run the tests
 
 ```shell
-git clone https://github.com/vue-a11y/vue-skip-to.git 
+git clone https://github.com/vue-a11y/vue-skip-to.git
 npm install
 npm run dev
 npm run test:e2e
 ```
 
 Or run Cypress on interactive mode
+
 ```shell
 npm run test:e2e:open
 ```
 
 ## Contributing
+
 - From typos in documentation to coding new features;
 - Check the open issues or open a new issue to start a discussion around your feature idea or the bug you found;
 - Fork repository, make changes and send a pull request;
