@@ -2,6 +2,13 @@
 
 > Helps people who only use the keyboard to jump to what matters most
 
+- [Installation](##installation)
+- [Usage](##usage)
+- [Props](##props)
+- [Custom styling](##custom-styling)
+- [Running tests](##running-tests)
+- [About](##about)
+- [Contributing](##contributing)
 
 The population grows very fast nowadays and with that the number of visually impaired increases as well. Did you know that we have over 350 million visually impaired people in the world?
 
