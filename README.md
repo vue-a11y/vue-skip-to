@@ -78,7 +78,7 @@ export default {
 
 To use multiple links, simply pass an array into the `to` prop with the following shape:
 
-```json
+```js
 [
   {
     "anchor": "<STRING>", // destination id
