@@ -78,7 +78,7 @@ export default {
 
 To use multiple links, simply pass an array into the `to` prop with the following shape:
 
-```json
+```js
 [
   {
     "anchor": "<STRING>", // destination id
@@ -151,6 +151,14 @@ Override the default styles by targeting the following:
 
 ```css
 .vue-skip-to {
+}
+.vue-skip-to__link {
+}
+.vue-skip-to__nav {
+}
+.vue-skip-to__nav-list {
+}
+.vue-skip-to__nav-list-item {
 }
 ```
 
