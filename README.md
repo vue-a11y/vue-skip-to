@@ -52,7 +52,7 @@ new Vue({
 
 <template>
   <div id="app">
-    <VueSkipTo to="#main" text="Skip to main content" />
+    <VueSkipTo to="#main" label="Skip to main content" />
 
     <!-- header, navigation, and more -->
 
@@ -94,7 +94,7 @@ To use multiple links, simply pass an array into the `to` prop with the followin
 <template>
   <div id="app">
     <vue-skip-to
-      title-list="Skip to"
+      list-label="Skip to"
       :to="[
         { anchor: '#main', label: 'Main content' },
         { anchor: '#footer', label: 'Footer' },
@@ -139,11 +139,11 @@ To use multiple links, simply pass an array into the `to` prop with the followin
 
 ## Props
 
-| Prop        | Data Type       | required | Description                                                       | Default                |
-| ----------- | --------------- | -------- | ----------------------------------------------------------------- | ---------------------- |
-| `to`        | String \| Array | false    | Destination ID or [array of destination objects](###skip-to-list) | '#main'                |
-| `label`     | String          | false    | Skip link text content                                            | 'Skip to main content' |
-| `titleList` | String          | false    | Skip link list label text                                         | 'Skip to'              |
+| Prop         | Data Type       | required | Description                                                       | Default                |
+| ------------ | --------------- | -------- | ----------------------------------------------------------------- | ---------------------- |
+| `to`         | String \| Array | false    | Destination ID or [array of destination objects](###skip-to-list) | '#main'                |
+| `label`      | String          | false    | Skip link text content                                            | 'Skip to main content' |
+| `list-label` | String          | false    | Skip link list label text                                         | 'Skip to'              |
 
 ## Custom styling
 
