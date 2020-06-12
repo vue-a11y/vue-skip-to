@@ -152,6 +152,14 @@ Override the default styles by targeting the following:
 ```css
 .vue-skip-to {
 }
+.vue-skip-to__link {
+}
+.vue-skip-to__nav {
+}
+.vue-skip-to__nav-list {
+}
+.vue-skip-to__nav-list-item {
+}
 ```
 
 ## Running tests
