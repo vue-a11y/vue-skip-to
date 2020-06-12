@@ -139,11 +139,11 @@ To use multiple links, simply pass an array into the `to` prop with the followin
 
 ## Props
 
-| Prop        | Data Type       | required | Description                                                       | Default                |
-| ----------- | --------------- | -------- | ----------------------------------------------------------------- | ---------------------- |
-| `to`        | String \| Array | false    | Destination ID or [array of destination objects](###skip-to-list) | '#main'                |
-| `label`     | String          | false    | Skip link text content                                            | 'Skip to main content' |
-| `titleList` | String          | false    | Skip link list label text                                         | 'Skip to'              |
+| Prop        | Data Type       | required | Description                                                     | Default                |
+| ----------- | --------------- | -------- | --------------------------------------------------------------- | ---------------------- |
+| `to`        | String \| Array | false    | Destination ID or [array of destination objects](#skip-to-list) | '#main'                |
+| `label`     | String          | false    | Skip link text content                                          | 'Skip to main content' |
+| `titleList` | String          | false    | Skip link list label text                                       | 'Skip to'              |
 
 ## Custom styling
 
