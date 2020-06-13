@@ -1,6 +1,6 @@
 <template>
   <nav class="vue-skip-to__nav">
-    <span id="list-title">{{ titleList }}</span>
+    <span id="list-title">{{ listLabel }}</span>
     <ul class="vue-skip-to__nav-list">
       <li
         v-for="el in to"
@@ -11,7 +11,7 @@
       >
         <VueSkipToSingle
           :to="el.anchor"
-          :aria-label="el.ariaLabel || `${titleList} ${el.label}`"
+          :aria-label="el.ariaLabel || `${listLabel} ${el.label}`"
         >
           {{ el.label }}
         </VueSkipToSingle>
@@ -27,7 +27,7 @@ export default {
   name: 'VueSkipToList',
 
   props: {
-    titleList: {
+    listLabel: {
       type: String,
       default: 'Skip to'
     },

@@ -12,7 +12,7 @@ export default {
   name: 'VueSkipTo',
 
   props: {
-    titleList: {
+    listLabel: {
       type: String,
       default: 'Skip to'
     },
@@ -36,7 +36,7 @@ export default {
     },
 
     props () {
-      if (this.isList) return { titleList: this.titleList, to: this.to }
+      if (this.isList) return { listLabel: this.listLabel, to: this.to }
       return { label: this.label, to: this.to }
     }
   }
