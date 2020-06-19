@@ -22,7 +22,7 @@ export default {
     to: {
       type: String,
       default: '#main'
-    },
+    }
   },
 
   computed: {
@@ -38,7 +38,7 @@ export default {
     props () {
       if (this.targetIsId) {
         return {
-          href: this.to,
+          href: this.to
         }
       }
 
