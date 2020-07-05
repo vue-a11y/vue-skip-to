@@ -1,11 +1,10 @@
-import resolve from 'rollup-plugin-node-resolve'
-import replace from 'rollup-plugin-replace'
-import VueLoader from 'rollup-plugin-vue'
-import serve from 'rollup-plugin-serve'
-import livereload from 'rollup-plugin-livereload'
-import buble from 'rollup-plugin-buble'
-import eslint from 'rollup-plugin-eslint'
+import buble from '@rollup/plugin-buble'
+import resolve from '@rollup/plugin-node-resolve'
 import chokidar from 'chokidar'
+import { eslint } from 'rollup-plugin-eslint'
+import livereload from 'rollup-plugin-livereload'
+import serve from 'rollup-plugin-serve'
+import vue from 'rollup-plugin-vue'
 
 export default {
   input: 'src/index.js',
@@ -14,25 +13,17 @@ export default {
     include: ['src/**']
   },
   plugins: [
+    resolve(),
     eslint({
       include: './src/**'
     }),
-    VueLoader({
+    vue({
+      css: true,
       compileTemplate: true
     }),
-    buble({
-      objectAssign: 'Object.assign',
-      jsx: 'h'
-    }),
-    resolve({
-      jsnext: true,
-      main: true,
-      browser: true
-    }),
-    replace({
-      'process.env.NODE_ENV': JSON.stringify('development')
-    }),
+    buble(),
     serve({
+      port: 5000,
       verbose: true,
       contentBase: 'demo',
       historyApiFallback: true
@@ -45,7 +36,8 @@ export default {
     {
       name: 'VueSkipTo',
       file: 'demo/vue-skip-to.js',
-      format: 'umd'
+      format: 'umd',
+      exports: 'named'
     }
   ]
 }

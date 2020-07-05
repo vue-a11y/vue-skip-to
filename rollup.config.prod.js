@@ -1,50 +1,28 @@
-import resolve from 'rollup-plugin-node-resolve'
-import replace from 'rollup-plugin-replace'
-import VueLoader from 'rollup-plugin-vue'
-import butternut from 'rollup-plugin-butternut'
-import buble from 'rollup-plugin-buble'
-import copy from 'rollup-plugin-copy'
+import buble from '@rollup/plugin-buble'
+import commonjs from '@rollup/plugin-commonjs'
+import replace from '@rollup/plugin-replace'
+import { terser } from 'rollup-plugin-terser'
+import vue from 'rollup-plugin-vue'
 
 export default {
   input: 'src/index.js',
   plugins: [
-    VueLoader({
-      compileTemplate: true
-    }),
-    buble({
-      objectAssign: 'Object.assign',
-      jsx: 'h'
-    }),
-    butternut(),
-    resolve({
-      jsnext: true,
-      main: true,
-      browser: true
-    }),
+    commonjs(),
     replace({
       'process.env.NODE_ENV': JSON.stringify('production')
     }),
-    copy({
-      'src/skip-to.vue': 'dist/vue-skip-to.vue'
-    })
+    vue({
+      css: true,
+      compileTemplate: true,
+      template: {
+        isProduction: true
+      }
+    }),
+    buble(),
+    terser()
   ],
-  output: [
-    {
-      file: 'dist/vue-skip-to.cjs.js',
-      format: 'cjs'
-    },
-    {
-      file: 'dist/vue-skip-to.es.js',
-      format: 'es'
-    },
-    {
-      file: 'dist/vue-skip-to.amd.js',
-      format: 'amd'
-    },
-    {
-      name: 'VueSkipTo',
-      file: 'dist/vue-skip-to.js',
-      format: 'umd'
-    }
-  ]
+  output: {
+    name: 'VueSkipTo',
+    exports: 'named'
+  }
 }
