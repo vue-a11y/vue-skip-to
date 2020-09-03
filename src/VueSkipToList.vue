@@ -1,5 +1,5 @@
 <template>
-  <nav class="vue-skip-to__nav">
+  <nav class="vue-skip-to__nav" aria-labelledby="list-title">
     <span id="list-title">{{ listLabel }}</span>
     <ul class="vue-skip-to__nav-list">
       <li
@@ -11,7 +11,7 @@
       >
         <VueSkipToSingle
           :to="el.anchor"
-          :aria-label="el.ariaLabel || `${listLabel} ${el.label}`"
+          :aria-label="el.ariaLabel || el.label"
         >
           {{ el.label }}
         </VueSkipToSingle>
