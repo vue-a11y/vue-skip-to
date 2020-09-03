@@ -9,6 +9,8 @@
 </template>
 
 <script>
+const focusedTags = new RegExp('^(a|select|input|button|textarea)', 'i')
+
 export default {
   name: 'VueSkipToSingle',
 
@@ -32,10 +34,10 @@ export default {
       if (!id) return
       const element = window.document.getElementById(id)
       if (!element) return
-      if (!/^(a|select|input|button|textarea)/i.test(element.tagName.toLowerCase())) {
-        element.setAttribute('tabindex', -1)
-      }
+      const isFocused = focusedTags.test(element.tagName.toLowerCase())
+      !isFocused && element.setAttribute('tabindex', -1)
       element.focus()
+      !isFocused && element.removeAttribute('tabindex')
     }
   }
 }
