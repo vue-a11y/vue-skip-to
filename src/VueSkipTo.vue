@@ -43,9 +43,11 @@ export default {
   },
 
   mounted () {
-    this.$route && this.$watch('this.$route.path', () => {
-      this.$nextTick(() => programmaticFocus(this.$refs.skipTo))
-    })
+    if (this.$route) {
+      this.$watch('$route.path', () => {
+        this.$nextTick(() => programmaticFocus(this.$refs.skipTo))
+      })
+    }
   },
 
   computed: {
