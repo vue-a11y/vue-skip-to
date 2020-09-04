@@ -2,6 +2,22 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.1.0](https://github.com/vue-a11y/vue-skip-to/compare/v2.0.1...v2.1.0) (2020-09-04)
+
+
+### Features
+
+* Emulate focus-within to support IE11 ([fdea86d](https://github.com/vue-a11y/vue-skip-to/commit/fdea86d750306d4d3f5310f350ef912935d39f96))
+* Set focus on SkipTo whenever the route path is changed ([4c5d4bc](https://github.com/vue-a11y/vue-skip-to/commit/4c5d4bcf9cb7db4b8036730bbb5b925e08dc4118))
+
+
+### Bug Fixes
+
+* Add timeout in programmaticFocus ([8fa883c](https://github.com/vue-a11y/vue-skip-to/commit/8fa883cb0b2f4a53af079a63535b5f460cf0ba20))
+* Regex to check key in handleKeydown method to support IE11 ([087a967](https://github.com/vue-a11y/vue-skip-to/commit/087a9674c487bbb7e771c6a30a49ddf17c7303ad))
+* Remove tabindex from target after focus ([1e5407f](https://github.com/vue-a11y/vue-skip-to/commit/1e5407f498aefd037a84368d48721fc04c434fa7))
+* Using indexOf in prop validation to support IE11 ([0eea882](https://github.com/vue-a11y/vue-skip-to/commit/0eea88286bb28d18c22c022319bbfc713d616fae))
+
 ### [2.0.1](https://github.com/vue-a11y/vue-skip-to/compare/v2.0.0...v2.0.1) (2020-07-05)
 
 ## [2.0.0](https://github.com/vue-a11y/vue-skip-to/compare/v1.0.6...v2.0.0) (2020-07-05)
