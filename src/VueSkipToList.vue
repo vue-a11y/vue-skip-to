@@ -36,7 +36,7 @@ export default {
         return Array.isArray(val) &&
           val.every(({ anchor, label }) => (
             typeof anchor === 'string' &&
-              anchor.startsWith('#') &&
+              anchor.indexOf('#') === 0 &&
               typeof String(label) === 'string'
           ))
       }
