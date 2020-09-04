@@ -2,6 +2,8 @@
   <a
     :href="to"
     @click.prevent="handleFocusElement"
+    @focus="$emit('focused', true)"
+    @blur="$emit('focused', false)"
     class="vue-skip-to__link"
   >
     <slot>{{ label }}</slot>

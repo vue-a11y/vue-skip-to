@@ -11,6 +11,7 @@
       >
         <VueSkipToSingle
           :to="el.anchor"
+          @focused="$emit('focus-within', $event)"
           :aria-label="el.ariaLabel || el.label"
         >
           {{ el.label }}

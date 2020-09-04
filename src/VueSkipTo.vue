@@ -1,6 +1,14 @@
 <template>
-  <div class="vue-skip-to">
-    <component :is="comp" v-bind="props" />
+  <div
+    class="vue-skip-to"
+    :class="{ 'focused': focused }"
+  >
+    <component
+      @focused="focusWithin"
+      @focus-within="focusWithin"
+      :is="comp"
+      v-bind="props"
+    />
   </div>
 </template>
 
@@ -26,6 +34,12 @@ export default {
     }
   },
 
+  data () {
+    return {
+      focused: false
+    }
+  },
+
   computed: {
     isList () {
       return Array.isArray(this.to)
@@ -38,6 +52,12 @@ export default {
     props () {
       if (this.isList) return { listLabel: this.listLabel, to: this.to }
       return { label: this.label, to: this.to }
+    }
+  },
+
+  methods: {
+    focusWithin (val) {
+      this.focused = val
     }
   }
 }
@@ -62,7 +82,7 @@ export default {
   border-width: 0;
 }
 
-.vue-skip-to:focus-within, .vue-skip-to:focus, .vue-skip-to:hover {
+.vue-skip-to.focused, .vue-skip-to:hover {
   left: 0;
   top: 0;
   clip: auto;
