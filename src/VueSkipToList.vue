@@ -50,7 +50,7 @@ export default {
   methods: {
     handleKeydown ({ key, target }) {
       const parent = target.parentElement
-      const itemList = key === 'ArrowUp' ? parent.previousElementSibling : parent.nextElementSibling
+      const itemList = /(ArrowUp|Up)/g.test(key) ? parent.previousElementSibling : parent.nextElementSibling
 
       if (!itemList) return
 
