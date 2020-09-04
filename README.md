@@ -76,7 +76,7 @@ export default {
 
 #### Skip-to list
 
-To use multiple links, simply pass an array into the `to` prop with the following shape:
+To use multiple links, set an array into the `to` prop with the following shape:
 
 ```js
 [
@@ -144,6 +144,16 @@ To use multiple links, simply pass an array into the `to` prop with the followin
 | `to`         | String \| Array | false    | Destination ID or [array of destination objects](###skip-to-list) | '#main'                |
 | `label`      | String          | false    | Skip link text content                                            | 'Skip to main content' |
 | `list-label` | String          | false    | Skip link list label text                                         | 'Skip to'              |
+
+## Support route change
+
+[@vue-a11y/skip-to](https://github.com/vue-a11y/vue-skip-to) checks if you are using the vue-router, watches changes to `$route.path` and send focus to the vue-skip-to wrapper.
+
+**Recommendation:** To make more sense, use the VueSkipTo component right after the root element of your app.
+
+Read more about affordable SPA routing:
+- [Improved accessible routing in Vue.js (updated)](https://marcus.io/blog/improved-accessible-routing-vuejs)
+- [What we learned from user testing of accessible client-side routing techniques with Fable Tech Labs](https://www.gatsbyjs.com/blog/2019-07-11-user-testing-accessible-client-routing/)
 
 ## Custom styling
 
