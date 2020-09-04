@@ -9,6 +9,8 @@
 </template>
 
 <script>
+import { programmaticFocus } from './util'
+
 const focusedTags = new RegExp('^(a|select|input|button|textarea)', 'i')
 
 export default {
@@ -34,10 +36,8 @@ export default {
       if (!id) return
       const element = window.document.getElementById(id)
       if (!element) return
-      const isFocused = focusedTags.test(element.tagName.toLowerCase())
-      !isFocused && element.setAttribute('tabindex', -1)
+      if (!focusedTags.test(element.tagName.toLowerCase())) return programmaticFocus(element)
       element.focus()
-      !isFocused && element.removeAttribute('tabindex')
     }
   }
 }
