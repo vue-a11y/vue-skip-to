@@ -22,7 +22,7 @@
     "test:unit": "jest",
     "test:e2e": "node_modules/.bin/cypress run --headless",
     "test:e2e:open": "node_modules/.bin/cypress open ",
-    "project:publish": "git push --follow-tags origin master && npm publish --access public"
+    "project:publish": "git push --follow-tags origin master && npm run build && npm publish --access public"
   },
   "repository": {
     "type": "git",
