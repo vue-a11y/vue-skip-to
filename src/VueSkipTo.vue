@@ -1,6 +1,7 @@
 <template>
   <div
     class="vue-skip-to"
+    ref="skipTo"
     :class="{ 'focused': focused }"
   >
     <component
@@ -15,6 +16,7 @@
 <script>
 import VueSkipToSingle from './VueSkipToSingle.vue'
 import VueSkipToList from './VueSkipToList.vue'
+import { programmaticFocus } from './util'
 
 export default {
   name: 'VueSkipTo',
@@ -38,6 +40,12 @@ export default {
     return {
       focused: false
     }
+  },
+
+  mounted () {
+    this.$route && this.$watch('this.$route.path', () => {
+      this.$nextTick(() => programmaticFocus(this.$refs.skipTo))
+    })
   },
 
   computed: {
