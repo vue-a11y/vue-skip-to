@@ -151,7 +151,7 @@ To use multiple links, set an array into the `to` prop with the following shape:
 
 **Recommendation:** To make more sense, use the VueSkipTo component right after the root element of your app.
 
-Read more about affordable SPA routing:
+Read more about accessible routing:
 - [Improved accessible routing in Vue.js (updated)](https://marcus.io/blog/improved-accessible-routing-vuejs)
 - [What we learned from user testing of accessible client-side routing techniques with Fable Tech Labs](https://www.gatsbyjs.com/blog/2019-07-11-user-testing-accessible-client-routing/)
 
