@@ -2,8 +2,5 @@ node_modules
 dist
 .editorconfig
 .DS_Store
-demo/node_modules
-demo/build
-demo/package-lock.json
-demo/vue-skip-to.js
-demo/CNAME
+demo
+demo-cli
