@@ -1,4 +1,9 @@
-# vue-skip-to
+# [@vue-a11y/vue-skip-to](https://github.com/vue-a11y/vue-skip-to/tree/next)
+
+---
+🔥 HEADS UP! You are in the Vue 3 compatible branch, [check the branch for Vue 2 support](https://github.com/vue-a11y/vue-skip-to).
+
+---
 
 > Helps people who only use the keyboard to jump to what matters most
 
@@ -24,10 +29,10 @@ This pattern is detailed in the Techniques for WCAG 2.0 in notes [G1](https://ww
 
 ```shell
 // npm
-npm install -S @vue-a11y/skip-to
+npm install -S @vue-a11y/skip-to@next
 
 // yarn
-yarn add @vue-a11y/skip-to
+yarn add @vue-a11y/skip-to@next
 ```
 
 ## Usage
@@ -37,21 +42,19 @@ yarn add @vue-a11y/skip-to
 ```javascript
 // main.js
 
-import Vue from 'vue'
+import { createApp } from 'vue'
+import App from './App.vue'
 import VueSkipTo from '@vue-a11y/skip-to'
 
-Vue.use(VueSkipTo)
-
-new Vue({
-  //...
-})
+createApp(App)
+  .use(VueSkipTo)
+  .mount('#app')
 ```
 
 ```vue
 // App.vue
 
 <template>
-  <div id="app">
     <VueSkipTo to="#main" label="Skip to main content" />
 
     <!-- header, navigation, and more -->
@@ -59,7 +62,6 @@ new Vue({
     <main id="main">
       <!-- content -->
     </main>
-  </div>
 </template>
 
 <script>
@@ -92,7 +94,6 @@ To use multiple links, set an array into the `to` prop with the following shape:
 // App.vue
 
 <template>
-  <div id="app">
     <vue-skip-to
       list-label="Skip to"
       :to="[
@@ -106,7 +107,6 @@ To use multiple links, set an array into the `to` prop with the following shape:
     <main id="main"></div>
 
     <footer id="footer"></div>
-  </div>
 </template>
 ```
 
@@ -114,8 +114,8 @@ To use multiple links, set an array into the `to` prop with the following shape:
 
 ```html
 <!--omitted -->
-  <script src="https://unpkg.com/vue"></script>
-  <script src="https://unpkg.com/@vue-a11y/skip-to"></script>
+  <script src="https://unpkg.com/vue@next"></script>
+  <script src="https://unpkg.com/@vue-a11y/skip-to@next"></script>
 </head>
 <body>
   <div id="app">
@@ -129,7 +129,7 @@ To use multiple links, set an array into the `to` prop with the following shape:
   </div>
 
   <script>
-    new Vue({
+    Vue.createApp({
       el: "#app"
     })
   </script>
