@@ -1,12 +1,11 @@
 import VueSkipTo from './VueSkipTo.vue'
 
-export default function install (Vue) {
+const install = (app) => {
   if (install.installed) return
   install.installed = true
-  Vue.component('VueSkipTo', VueSkipTo)
+  app.component('VueSkipTo', VueSkipTo)
 }
 
-// auto install
-if (typeof window !== 'undefined' && typeof window.Vue !== 'undefined') {
-  window.Vue.use(install)
-}
+VueSkipTo.install = install;
+
+export default VueSkipTo;
