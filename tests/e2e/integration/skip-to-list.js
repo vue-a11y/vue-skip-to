@@ -20,5 +20,8 @@ describe('Skip link list', () => {
   it('Should focus relevant element on link press', () => {
     cy.get('body').tab().click()
     cy.focused().should('have.id', 'main')
+
+    cy.get('body').tab().tab().click()
+    cy.focused().should('have.class', 'footer')
   })
 })
