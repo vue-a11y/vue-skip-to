@@ -1,5 +1,10 @@
 # vue-skip-to
 
+---
+🔥 HEADS UP! You are in the Vue 2 compatible branch, [check the branch for Vue 3 support](https://github.com/vue-a11y/vue-skip-to/tree/next).
+
+---
+
 > Helps people who only use the keyboard to jump to what matters most
 
 - [Installation](##installation)
