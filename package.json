@@ -1,6 +1,6 @@
 {
   "name": "@vue-a11y/skip-to",
-  "version": "2.1.2",
+  "version": "3.0.0",
   "description": "It helps people who only use the keyboard to jump to what matters most.",
   "main": "dist/skip-to.cjs.js",
   "style": "dist/index.css",

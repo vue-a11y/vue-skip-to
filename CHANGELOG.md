@@ -2,6 +2,8 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [3.0.0](https://github.com/vue-a11y/vue-skip-to/compare/v2.1.2...v3.0.0) (2021-04-06)
+
 ### [2.1.2](https://github.com/vue-a11y/vue-skip-to/compare/v2.1.1...v2.1.2) (2020-10-20)
 
 ### [2.1.1](https://github.com/vue-a11y/vue-skip-to/compare/v2.1.0...v2.1.1) (2020-09-04)
