@@ -12,8 +12,9 @@
     }
   </style>
 
-  <script src="https://unpkg.com/vue"></script>
-  <script src="vue-skip-to.js"></script>
+  <script src="https://unpkg.com/vue@next"></script>
+  <script src="../dist/skip-to.iife.js"></script>
+  <link href="../dist/style.css" rel="stylesheet">
 </head>
 <body>
 
@@ -40,9 +41,9 @@
     </label>
   </div>
   <script>
-    var App = new Vue({
-      el: '#app'
-    })
+    Vue.createApp({})
+      .use(VueSkipTo.default)
+      .mount('#app')
   </script>
 </body>
 </html>

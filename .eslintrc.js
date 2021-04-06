@@ -4,12 +4,18 @@ module.exports = {
     browser: true,
     node: true
   },
-  extends: [
-    'plugin:vue/essential'
-  ],
   plugins: [
+    'vuejs-accessibility'
   ],
-  // add your custom rules here
-  rules: {},
-  globals: {}
+  extends: [
+    'plugin:vue/vue3-recommended',
+    '@vue/standard',
+    'plugin:vuejs-accessibility/recommended'
+  ],
+  parserOptions: {
+    parser: 'babel-eslint'
+  },
+  rules: {
+    'no-console': 'off'
+  }
 }

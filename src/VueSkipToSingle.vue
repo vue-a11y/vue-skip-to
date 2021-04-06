@@ -29,6 +29,8 @@ export default {
     }
   },
 
+  emits: ['focused'],
+
   methods: {
     handleFocusElement ({ target }) {
       this.focusElement(target.getAttribute('href').substring(1))

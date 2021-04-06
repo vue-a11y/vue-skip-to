@@ -12,8 +12,9 @@
     }
   </style>
 
-  <script src="https://unpkg.com/vue"></script>
-  <script src="vue-skip-to.js"></script>
+  <script src="https://unpkg.com/vue@next"></script>
+  <script src="../dist/skip-to.iife.js"></script>
+  <link href="../dist/style.css" rel="stylesheet">
 </head>
 <body>
 
@@ -49,15 +50,15 @@
 
     <nav>
       <ul>
-        <li><a href="/search.html">Example: Skip to search</a></li>
-        <li><a href="/skip-to-list.html">Example: skip to list</a></li>
+        <li><a href="/demo-cdn/search.html">Example: Skip to search</a></li>
+        <li><a href="/demo-cdn/skip-to-list.html">Example: skip to list</a></li>
       </ul>
     </nav>
   </div>
   <script>
-    var App = new Vue({
-      el: '#app'
-    })
+    Vue.createApp({})
+      .use(VueSkipTo.default)
+      .mount('#app')
   </script>
 </body>
 </html>

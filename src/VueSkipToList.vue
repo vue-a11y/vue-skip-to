@@ -27,6 +27,10 @@ import VueSkipToSingle from './VueSkipToSingle.vue'
 export default {
   name: 'VueSkipToList',
 
+  components: {
+    VueSkipToSingle
+  },
+
   props: {
     listLabel: {
       type: String,
@@ -44,9 +48,7 @@ export default {
     }
   },
 
-  components: {
-    VueSkipToSingle
-  },
+  emits: ['focus-within'],
 
   methods: {
     handleKeydown ({ key, target }) {

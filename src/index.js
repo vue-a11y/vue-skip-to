@@ -1,5 +1,5 @@
-import VueSkipToPlugin from './plugin'
+import VueSkipTo from './VueSkipTo.vue'
 
-export default VueSkipToPlugin
-
-export { default as VueSkipTo } from './VueSkipTo.vue'
+export default function install (app) {
+  app.component('VueSkipTo', VueSkipTo)
+}

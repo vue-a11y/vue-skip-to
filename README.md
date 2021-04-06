@@ -11,7 +11,6 @@
 - [Usage](##usage)
 - [Props](##props)
 - [Custom styling](##custom-styling)
-- [Running tests](##running-tests)
 - [About](##about)
 - [Contributing](##contributing)
 
@@ -45,6 +44,7 @@ yarn add @vue-a11y/skip-to@next
 import { createApp } from 'vue'
 import App from './App.vue'
 import VueSkipTo from '@vue-a11y/skip-to'
+import '@vue-a11y/skip-to/style.css'
 
 createApp(App)
   .use(VueSkipTo)
@@ -129,9 +129,9 @@ To use multiple links, set an array into the `to` prop with the following shape:
   </div>
 
   <script>
-    Vue.createApp({
-      el: "#app"
-    })
+    Vue.createApp({})
+      .use(VueSkipTo.default)
+      .mount('#app')
   </script>
 </body>
 </html>
@@ -147,7 +147,7 @@ To use multiple links, set an array into the `to` prop with the following shape:
 
 ## Support route change
 
-[@vue-a11y/skip-to](https://github.com/vue-a11y/vue-skip-to) checks if you are using the vue-router, watches changes to `$route.path` and send focus to the vue-skip-to wrapper.
+[@vue-a11y/skip-to](https://github.com/vue-a11y/vue-skip-to/tree/next) checks if you are using the vue-router, watches changes to `$route.path` and send focus to the vue-skip-to wrapper.
 
 **Recommendation:** To make more sense, use the VueSkipTo component right after the root element of your app.
 
@@ -170,21 +170,6 @@ Override the default styles by targeting the following:
 }
 .vue-skip-to__nav-list-item {
 }
-```
-
-## Running tests
-
-```shell
-git clone https://github.com/vue-a11y/vue-skip-to.git
-npm install
-npm run dev
-npm run test:e2e
-```
-
-Or run Cypress on interactive mode
-
-```shell
-npm run test:e2e:open
 ```
 
 ## About

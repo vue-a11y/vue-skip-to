@@ -8,12 +8,10 @@ export default defineConfig({
     vue({ isProduction: true })
   ],
   build: {
-    cssCodeSplit: true,
-    emptyOutDir: true,
     lib: {
       entry: path.resolve(__dirname, 'src'),
       name: 'VueSkipTo',
-      formats: ['esm', 'umd']
+      formats: ['es', 'cjs', 'iife']
     },
     rollupOptions: {
       external: ['vue'],
