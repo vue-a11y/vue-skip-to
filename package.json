@@ -3,7 +3,7 @@
   "version": "3.0.0",
   "description": "It helps people who only use the keyboard to jump to what matters most.",
   "main": "dist/skip-to.cjs.js",
-  "style": "dist/index.css",
+  "style": "dist/style.css",
   "browser": "dist/skip-to.es.js",
   "module": "dist/skip-to.es.js",
   "unpkg": "dist/skip-to.iife.js",
