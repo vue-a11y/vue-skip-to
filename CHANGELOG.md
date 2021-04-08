@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [3.0.2](https://github.com/vue-a11y/vue-skip-to/compare/v3.0.1...v3.0.2) (2021-04-08)
+
+
+### Bug Fixes
+
+* Demo in npmignore ([c192e21](https://github.com/vue-a11y/vue-skip-to/commit/c192e218087bda3d8f03fc6001437273f05521cd))
+* remove exports config in package.json ([5053e44](https://github.com/vue-a11y/vue-skip-to/commit/5053e4430a5ece78e543374fc176f8a77e66be6c))
+
 ### [3.0.1](https://github.com/vue-a11y/vue-skip-to/compare/v3.0.0...v3.0.1) (2021-04-08)
 
 
