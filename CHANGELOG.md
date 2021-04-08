@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [3.0.1](https://github.com/vue-a11y/vue-skip-to/compare/v3.0.0...v3.0.1) (2021-04-08)
+
+
+### Bug Fixes
+
+* Style file in package.json ([4eb127b](https://github.com/vue-a11y/vue-skip-to/commit/4eb127b01983e78cc0bb190ce9a35da22201fa08))
+
 ## [3.0.0](https://github.com/vue-a11y/vue-skip-to/compare/v2.1.2...v3.0.0) (2021-04-06)
 
 ### [2.1.2](https://github.com/vue-a11y/vue-skip-to/compare/v2.1.1...v2.1.2) (2020-10-20)
