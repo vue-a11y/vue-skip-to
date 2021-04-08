@@ -44,7 +44,7 @@ yarn add @vue-a11y/skip-to@next
 import { createApp } from 'vue'
 import App from './App.vue'
 import VueSkipTo from '@vue-a11y/skip-to'
-import '@vue-a11y/skip-to/style.css'
+import '@vue-a11y/skip-to/dist/style.css'
 
 createApp(App)
   .use(VueSkipTo)
