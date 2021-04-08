@@ -116,7 +116,7 @@ To use multiple links, set an array into the `to` prop with the following shape:
 <!--omitted -->
   <script src="https://unpkg.com/vue@next"></script>
   <script src="https://unpkg.com/@vue-a11y/skip-to@next"></script>
-  <link href="https://unpkg.com/@vue-a11y/skip-to@next/style.css" rel="stylesheet">
+  <link href="https://unpkg.com/@vue-a11y/skip-to@next/dist/style.css" rel="stylesheet">
 </head>
 <body>
   <div id="app">
