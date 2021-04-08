@@ -8,12 +8,6 @@
   "module": "dist/skip-to.es.js",
   "unpkg": "dist/skip-to.iife.js",
   "jsdelivr": "dist/skip-to.iife.js",
-  "exports": {
-    ".": {
-      "import": "./dist/skip-to.es.js",
-      "require": "./dist/skip-to.cjs.js"
-    }
-  },
   "scripts": {
     "dev": "vite",
     "build": "npm-run-all -s clean build:*",
