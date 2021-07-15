@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [3.0.3](https://github.com/vue-a11y/vue-skip-to/compare/v3.0.2...v3.0.3) (2021-07-15)
+
+
+### Bug Fixes
+
+* vue as peerDependencies ([dd746e7](https://github.com/vue-a11y/vue-skip-to/commit/dd746e7e285ecfc8fb7e09001c89824558e5fa56))
+* **next:** Update README ([fb3833a](https://github.com/vue-a11y/vue-skip-to/commit/fb3833ac45b7aacb0afcd6df113e26ec8664069c))
+
 ### [3.0.2](https://github.com/vue-a11y/vue-skip-to/compare/v3.0.1...v3.0.2) (2021-04-08)
 
 
